@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: production-build
-          path: ./build/
+          path: ./dev/build/
           retention-days: 1
 
       # - name: Setup Debug Session
