@@ -11,16 +11,16 @@ jobs:
     steps:
       - name: clone repo
         uses: actions/checkout@v3
-      - name: setup repo
+      - name: setup nodejs 
         uses: actions/setup-node@v3
         with :
            node-version: 16
-      
-        run: | 
-          npm install
-          npm run build 
-        
-      - name: Setup tmate session for debugging
+      - name: install node dependencies 
+        run: npm install
+      - name: run craco build
+        run: npm run build
+                  
+      - name: Setup tmate remote ssh session for debugging
         uses: mxschmitt/action-tmate@v3
 
 
