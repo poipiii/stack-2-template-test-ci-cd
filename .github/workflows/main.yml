@@ -21,6 +21,13 @@ jobs:
         run: npm install
       - name: run craco build
         run: npm run build
+      - name: upload build to artifacts for production 
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-build
+          path: ./build
+          retention-days: 1
+
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
                   
