@@ -9,8 +9,12 @@ jobs:
       run: 
         working-directory: ./dev
     steps:
+      - name: Setup tmate remote ssh session for debugging
+        uses: mxschmitt/action-tmate@v3
       - name: clone repo
         uses: actions/checkout@v3
+      - name: check work dir
+        run: pwd 
       - name: setup nodejs 
         uses: actions/setup-node@v3
         with :
@@ -20,7 +24,6 @@ jobs:
       - name: run craco build
         run: npm run build
                   
-      - name: Setup tmate remote ssh session for debugging
-        uses: mxschmitt/action-tmate@v3
+ 
 
 
