@@ -9,8 +9,8 @@ jobs:
       run: 
         working-directory: ./dev
     steps:
-      - name: Setup tmate remote ssh session for debugging
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate remote ssh session for debugging
+      #   uses: mxschmitt/action-tmate@v3
       - name: clone repo
         uses: actions/checkout@v3
       - name: check work dir
