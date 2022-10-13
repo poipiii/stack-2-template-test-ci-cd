@@ -9,7 +9,9 @@ jobs:
       run: 
         working-directory: ./dev
     steps:
+      - name: clone repo 
       - uses: actions/checkout@v3
+      - name: setup repo
       - uses: actions/setup-node@v3
         with :
            node-version: 16
