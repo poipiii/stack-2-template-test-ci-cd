@@ -25,11 +25,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: production-build
-          path: ./build
+          path: ./build/
           retention-days: 1
 
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
+      # - name: Setup Debug Session
+      #   uses: csexton/debugger-action@master
                   
  
 
