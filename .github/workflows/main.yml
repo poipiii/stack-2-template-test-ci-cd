@@ -36,12 +36,17 @@ jobs:
     needs: Build-Crago
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
+      - name: download production build artifacts
+        uses: actions/download-artifact@v3
         with:
          name: production-build
     
-      - name: Display structure of downloaded files
+      - name: Check structure of downloaded files
         run: ls -R
+      - name: check dir
+        run:  ls -a
+      
+
 
  
 
