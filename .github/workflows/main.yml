@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 jobs:
   Build-Crago: 
+    name: complile production build 
     runs-on: ubuntu-latest
     defaults:
       run: 
@@ -31,6 +32,8 @@ jobs:
       # - name: Setup Debug Session
       #   uses: csexton/debugger-action@master
   Upload-prod-build:
+    name: upload production build to google drive
+    needs: Build-Crago
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
