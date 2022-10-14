@@ -43,14 +43,15 @@ jobs:
     
       - name: Check structure of downloaded files
         run: ls -R
-      - name: check dir
-        run:  ls -a
+ 
       - name: Zip production build files
         run: |
           sudo apt-get update
           sudo apt-get install zip
           zip -r production-build.zip *
-
+          
+      - name: check dir
+        run:  ls -a
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
         with:
